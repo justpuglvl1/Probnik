@@ -37,7 +37,7 @@ namespace Курсовая.Models
 
 		public void GetSalary(General general)
 		{
-			general.Salary = CalculateSalary(general);
+			general.Salary = decimal.Round(CalculateSalary(general), 2);
 
 			context.Generals.Add(general);
 			context.SaveChanges();
@@ -46,7 +46,7 @@ namespace Курсовая.Models
 
 		public void EditSalary(General general)
 		{
-			general.Salary = CalculateSalary(general);
+			general.Salary = decimal.Round(CalculateSalary(general), 2);
 
 			context.Generals.Update(general);
 			context.SaveChanges();
