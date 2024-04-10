@@ -81,9 +81,9 @@ namespace Курсовая.View
 						general.ChildrensOVZ = Convert.ToInt32(txtChildrensOVZ.Text);
 						general.Surcharges = Convert.ToInt32(txtSurcharges.Text);
 						general.Experience = Convert.ToInt32(txtExperience.Text);
-						presenter.GetSalary(general);
+						presenter.EditSalary(general);
 
-						MessageBox.Show("Учитель добавлен");
+						MessageBox.Show("Учитель изменен");
 						this.Close();
 					}
 				}
@@ -98,9 +98,9 @@ namespace Курсовая.View
 					general.Surcharges = Convert.ToInt32(txtSurcharges.Text);
 					general.Experience = Convert.ToInt32(txtExperience.Text);
 					general.Class = "";
-					presenter.GetSalary(general);
+					presenter.EditSalary(general);
 
-					MessageBox.Show("Учитель добавлен");
+					MessageBox.Show("Учитель изменен");
 					this.Close();
 				}
 			};
