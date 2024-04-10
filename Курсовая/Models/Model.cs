@@ -66,11 +66,11 @@ namespace Курсовая.Models
 
 			decimal experience = mainSalary * exp - mainSalary;
 
-			decimal hour = mainSalary * mainCategory * mainAcademicDegrees * (general.TeachingLoad + general.TeachingLoadOVZ * 1.2m) / 18;
+			decimal hour = mainSalary * mainCategory * mainAcademicDegrees * (general.TeachingLoad + general.TeachingLoadOVZ * 1.2m) / 18m;
 
-			decimal activitie = general.Activitie / 18 * 10100;
+			decimal activitie = Convert.ToDecimal(general.Activitie) / 18m * 10100m;
 
-			decimal payClasses = classes * general.TeachingLoad + general.TeachingLoadOVZ * 200;
+			decimal payClasses = classes * general.TeachingLoad + general.TeachingLoadOVZ * 200m;
 
 			return salary + experience + hour + activitie + payClasses;
 		}
@@ -121,11 +121,13 @@ namespace Курсовая.Models
 
 			decimal experience = mainSalary * exp - mainSalary;
 
-			decimal hour = mainSalary * mainCategory * mainAcademicDegrees * (meters.TeachingLoad + meters.TeachingLoadOVZ * 1.2m) / 18;
+			decimal hour = mainSalary * mainCategory * mainAcademicDegrees * (Convert.ToDecimal(meters.TeachingLoad) + Convert.ToDecimal(meters.TeachingLoadOVZ) * 1.2m) / 18m;
 
-			decimal activitie = meters.Activitie / 18 * 10100;
+			decimal chek = Convert.ToDecimal(meters.Activitie) / 18m;
 
-			decimal payClasses = classes * meters.TeachingLoad + meters.TeachingLoadOVZ * 200;
+            decimal activitie = chek * 10100m;
+
+			decimal payClasses = classes * meters.TeachingLoad + meters.TeachingLoadOVZ * 200m;
 
 			var package = new ExcelPackage();
 			var worksheet = package.Workbook.Worksheets
@@ -185,11 +187,11 @@ namespace Курсовая.Models
 
 			worksheet.Cells[24, 3, 24, 8].Merge = true;
 			worksheet.Cells[24, 3, 24, 8].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Left;
-			worksheet.Cells[24, 3].Value = $"За часы педагогической нагрузки {Decimal.Round(hour, 2)}";
+			worksheet.Cells[24, 3].Value = $"За часы педагогической нагрузки {decimal.Round(hour, 2)}";
 
 			worksheet.Cells[25, 3, 25, 8].Merge = true;
 			worksheet.Cells[25, 3, 25, 8].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Left;
-			worksheet.Cells[25, 3].Value = $"За внеурочную деятельность {Decimal.Round(activitie, 2)}";
+			worksheet.Cells[25, 3].Value = $"За внеурочную деятельность {decimal.Round(activitie, 2)}";
 
 			worksheet.Cells[26, 3, 26, 8].Merge = true;
 			worksheet.Cells[26, 3, 26, 8].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Left;
