@@ -22,10 +22,14 @@ namespace Курсовая
 			int source1 = Generals.Where(x => x.Category == "СЗД").Count();
 			int source2 = Generals.Where(x => x.Category == "I").Count();
 			int source3 = Generals.Where(x => x.Category == "ВКК").Count();
+			int source4 = Generals.Where(x => x.Academic == true).Count();
+			int source5 = Generals.Where(x => x.ClasseTeacher == true).Count();
 
 			b1.Text = "СЗД - " + source1;
 			b2.Text = "I - " + source2;
 			b3.Text = "ВКК - " + source3;
+			b4.Text = "Уч. степень - " + source4;
+			b5.Text = "Классное руководство - " + source5;
         }
 
 		private void Button_Click(object sender, RoutedEventArgs e)
@@ -36,7 +40,7 @@ namespace Курсовая
 			}
 			else
 			{
-				List<General> newGenerals = Generals.Where(x => x.FullName == txt1.Text).ToList();
+				List<General> newGenerals = Generals.Where(x => x.FullName.Contains(txt1.Text)).ToList();
 				dtg.ItemsSource = newGenerals;
 				dtg.Items.Refresh();
 			}

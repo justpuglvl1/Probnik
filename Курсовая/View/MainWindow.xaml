@@ -19,7 +19,9 @@
             <TextBox Width="200" HorizontalAlignment="Left" Margin="0 0 0 0" x:Name="txt1"/>
             <TextBlock x:Name="b1" HorizontalAlignment="Center" Width="100" Margin="0 0 850 0" VerticalAlignment="Center"/>
             <TextBlock x:Name="b2" HorizontalAlignment="Center" Width="100" Margin="0 0 700 0" VerticalAlignment="Center"/>
-            <TextBlock x:Name="b3" HorizontalAlignment="Center" Width="100" Margin="0 0 550 0" VerticalAlignment="Center"/>
+            <TextBlock x:Name="b3" HorizontalAlignment="Center" Width="100" Margin="0 0 570 0" VerticalAlignment="Center"/>
+            <TextBlock x:Name="b4" HorizontalAlignment="Center" Width="100" Margin="0 0 400 0" VerticalAlignment="Center"/>
+            <TextBlock x:Name="b5" HorizontalAlignment="Center" Width="200" Margin="0 0 70 0" VerticalAlignment="Center"/>
         </Grid>
 
         <DataGrid x:Name="dtg" Grid.Row="1" Margin="5" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="dtg_SelectionChanged">
