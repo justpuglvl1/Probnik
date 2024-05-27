@@ -17,6 +17,9 @@
             <Button Width="100" HorizontalAlignment="Left" Margin="210 3 0 3" Content="Найти" Click="Button_Click"/>
             <Button Width="100" HorizontalAlignment="Right" Margin="210 0 0 0" Content="Добавить" Click="Button_Click_2"/>
             <TextBox Width="200" HorizontalAlignment="Left" Margin="0 0 0 0" x:Name="txt1"/>
+            <TextBlock x:Name="b1" HorizontalAlignment="Center" Width="100" Margin="0 0 850 0" VerticalAlignment="Center"/>
+            <TextBlock x:Name="b2" HorizontalAlignment="Center" Width="100" Margin="0 0 700 0" VerticalAlignment="Center"/>
+            <TextBlock x:Name="b3" HorizontalAlignment="Center" Width="100" Margin="0 0 550 0" VerticalAlignment="Center"/>
         </Grid>
 
         <DataGrid x:Name="dtg" Grid.Row="1" Margin="5" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="dtg_SelectionChanged">

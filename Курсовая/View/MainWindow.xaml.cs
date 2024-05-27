@@ -19,7 +19,14 @@ namespace Курсовая
 			InitializeComponent();
 			Generals = presenter.GetGenerals();
 			dtg.ItemsSource = Generals;
-		}
+			int source1 = Generals.Where(x => x.Category == "СЗД").Count();
+			int source2 = Generals.Where(x => x.Category == "I").Count();
+			int source3 = Generals.Where(x => x.Category == "ВКК").Count();
+
+			b1.Text = "СЗД - " + source1;
+			b2.Text = "I - " + source2;
+			b3.Text = "ВКК - " + source3;
+        }
 
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
