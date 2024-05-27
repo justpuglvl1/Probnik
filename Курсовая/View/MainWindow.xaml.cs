@@ -66,16 +66,30 @@ namespace Курсовая
 
 		private void MenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			EditTeacher editTeacher = new EditTeacher(general);
-			editTeacher.Show();
+			if (general is not null)
+			{
+                EditTeacher editTeacher = new EditTeacher(general);
+                editTeacher.Show();
+            }
+			else
+			{
+				MessageBox.Show("Учитель не выбран");
+			}
 		}
 
 		private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-		{
-			presenter.DeleteGeneral(general);
-			Generals = presenter.GetGenerals();
-			dtg.ItemsSource = Generals;
-			dtg.Items.Refresh(); MessageBox.Show("Учитель удален");
+        {
+			if (general is not null)
+			{
+				presenter.DeleteGeneral(general);
+				Generals = presenter.GetGenerals();
+				dtg.ItemsSource = Generals;
+				dtg.Items.Refresh(); MessageBox.Show("Учитель удален");
+			}
+			else
+            {
+                MessageBox.Show("Учитель не выбран");
+            }
 		}
 
 		private void MenuItem_Click_2(object sender, RoutedEventArgs e)
