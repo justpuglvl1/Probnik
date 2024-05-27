@@ -20,7 +20,7 @@ namespace Курсовая
 			Generals = presenter.GetGenerals();
 			dtg.ItemsSource = Generals;
 			int source1 = Generals.Where(x => x.Category == "СЗД").Count();
-			int source2 = Generals.Where(x => x.Category == "I").Count();
+			int source2 = Generals.Where(x => x.Category != "ВКК" && x.Category != "СЗД").Count();
 			int source3 = Generals.Where(x => x.Category == "ВКК").Count();
 			int source4 = Generals.Where(x => x.Academic == true).Count();
 			int source5 = Generals.Where(x => x.ClasseTeacher == true).Count();
