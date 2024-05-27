@@ -83,7 +83,20 @@ namespace Курсовая
 			{
 				presenter.DeleteGeneral(general);
 				Generals = presenter.GetGenerals();
-				dtg.ItemsSource = Generals;
+
+                int source1 = Generals.Where(x => x.Category == "СЗД").Count();
+                int source2 = Generals.Where(x => x.Category != "ВКК" && x.Category != "СЗД").Count();
+                int source3 = Generals.Where(x => x.Category == "ВКК").Count();
+                int source4 = Generals.Where(x => x.Academic == true).Count();
+                int source5 = Generals.Where(x => x.ClasseTeacher == true).Count();
+
+                b1.Text = "СЗД - " + source1;
+                b2.Text = "I - " + source2;
+                b3.Text = "ВКК - " + source3;
+                b4.Text = "Уч. степень - " + source4;
+                b5.Text = "Классное руководство - " + source5;
+
+                dtg.ItemsSource = Generals;
 				dtg.Items.Refresh(); MessageBox.Show("Учитель удален");
 			}
 			else
@@ -95,7 +108,20 @@ namespace Курсовая
 		private void MenuItem_Click_2(object sender, RoutedEventArgs e)
 		{
 			Generals = presenter.GetGenerals();
-			dtg.ItemsSource = Generals;
+
+            int source1 = Generals.Where(x => x.Category == "СЗД").Count();
+            int source2 = Generals.Where(x => x.Category != "ВКК" && x.Category != "СЗД").Count();
+            int source3 = Generals.Where(x => x.Category == "ВКК").Count();
+            int source4 = Generals.Where(x => x.Academic == true).Count();
+            int source5 = Generals.Where(x => x.ClasseTeacher == true).Count();
+
+            b1.Text = "СЗД - " + source1;
+            b2.Text = "I - " + source2;
+            b3.Text = "ВКК - " + source3;
+            b4.Text = "Уч. степень - " + source4;
+            b5.Text = "Классное руководство - " + source5;
+
+            dtg.ItemsSource = Generals;
 			dtg.Items.Refresh();
 		}
 
